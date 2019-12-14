@@ -31,6 +31,7 @@ const formatDisplayResources = (resources) => {
 // Format Post Edge item into cleaner output
 const formatSinglePost = (node) => {
     const comments = node.edge_media_to_comment || node.edge_media_to_parent_comment || node.edge_media_preview_comment;
+    print(node.edge_liked_by)
     const likes = node.edge_liked_by || node.edge_media_preview_like;
     return {
         type: node.__typename ? node.__typename.replace('Graph', '') : (node.is_video ? 'Video' : 'Image'),
